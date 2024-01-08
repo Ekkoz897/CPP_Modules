@@ -1,18 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 07:24:04 by apereira          #+#    #+#             */
-/*   Updated: 2023/12/26 08:08:38 by apereira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "phonebook.hpp"
 
-#include <iostream>
-
-int main(int argc, char *argv[])
+int	Phonebook::get_current()
 {
-	
+	return (this->current);
 }
+
+void	Phonebook::set_current(int a)
+{
+	this->current = a;
+}
+

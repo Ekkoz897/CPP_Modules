@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = phonebook
 
 CC = c++
 
@@ -6,14 +6,14 @@ RM = rm -rf
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
+SRC = main.cpp phonebook.cpp contact.hpp
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(FLAGS) megaphone.cpp -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 
 git: fclean
