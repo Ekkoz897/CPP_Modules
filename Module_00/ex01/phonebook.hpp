@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/26 07:34:08 by apereira          #+#    #+#             */
+/*   Updated: 2024/02/26 09:18:26 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
@@ -13,13 +25,16 @@ class Phonebook
 			Contact	ct[8];
 			int		current;
 	public:
-			int		get_current();
-			void	set_current(int a);
-			int		add_contact(int current);
-			void	search_contact();
+			int		getCurrent();
+			void	setCurrent(int a);
+			int		addContact(int current);
+			void	searchContact();
 	
 };
 
-std::string	trim_spaces(std::string str);
+std::string	trimSpaces(std::string str);
+void		cleanContact(Contact* ct, int current);
+int			checkNumber(std::string str);
+std::string cutWord(std::string str);
 
 #endif

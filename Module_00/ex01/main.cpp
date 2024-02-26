@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/26 07:34:03 by apereira          #+#    #+#             */
+/*   Updated: 2024/02/26 09:46:30 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 #include "contact.hpp"
 #include <iomanip>
@@ -6,30 +18,39 @@ int main()
 {
 	Phonebook	book;
 	std::string	input;
-	std::cout << "Please insert one of the following commands: ADD, SEARCH or EXIT.\n> ";
+
+	std::cout << std::endl;
+    std::cout << "📞 Welcome to Your Awesome PhoneBook 📖" << std::endl;
+    std::cout << std::endl;
+    std::cout << "--------------USAGE---------------" << std::endl;
+    std::cout << "ADD\t: To add a contact." << std::endl;
+    std::cout << "SEARCH\t: To search for a contact." << std::endl;
+    std::cout << "EXIT\t: to quite the PhoneBook." << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+    std::cout << std::endl;
 	getline(std::cin, input);
-	book.set_current(0);
-	input = trim_spaces(input);
+	book.setCurrent(0);
+	input = trimSpaces(input);
 	while (input != "EXIT")
 	{
 		if (input == "ADD")
 		{
-			if (book.add_contact(book.get_current()) == 0)
+			if (book.addContact(book.getCurrent()) == 0)
 			{
-				book.set_current(book.get_current() + 1);
-				if (book.get_current() == 8)
-					book.set_current(0);
+				book.setCurrent(book.getCurrent() + 1);
+				if (book.getCurrent() == 8)
+					book.setCurrent(0);
 			}
 		}
 		else if (input == "SEARCH")
-			book.search_contact();
-		else if ("EXIT")
+			book.searchContact();
+		else if (input == "EXIT")
 			break ;
 		else
 			std::cout << "Not a valid command" << std::endl;
-		std::cout << "> " << std::endl;
+		std::cout << "> ";
 		getline(std::cin, input);
-		input = trim_spaces(input);
+		input = trimSpaces(input);
 	}
 	std::cout << "Exiting..." << std::endl;
 	return (0);

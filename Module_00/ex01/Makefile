@@ -2,18 +2,21 @@ NAME = phonebook
 
 CC = c++
 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+
 RM = rm -rf
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp phonebook.cpp contact.cpp utils.cpp
 
-SRC = main.cpp phonebook.cpp contact.hpp
+OBJS = $(SRC:.cpp=.o)
 
-OBJ = $(SRC:.c=.o)
+all:	$(NAME) $(OBJS)
 
-all: $(NAME)
+%.o: %.cpp
+					$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+					@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 
 git: fclean
@@ -30,10 +33,10 @@ git: fclean
 commit: fclean
 
 clean:
-	@$(RM) $(NAME)
+				@$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re: fclean all
 
