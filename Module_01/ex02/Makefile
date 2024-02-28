@@ -5,39 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: apereira <apereira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/27 09:43:11 by apereira          #+#    #+#              #
-#    Updated: 2024/02/27 09:43:11 by apereira         ###   ########.fr        #
+#    Created: 2024/02/27 10:58:10 by apereira          #+#    #+#              #
+#    Updated: 2024/02/27 10:58:19 by apereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = ptr
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-SRC = main.cpp phonebook.cpp contact.cpp utils.cpp
+SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-all:	$(NAME) $(OBJS)
+all: $(NAME)
 
 %.o: %.cpp
-					$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-					@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-commit: fclean
+		 $(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 clean:
-				@$(RM) $(OBJS)
+		$(RM) $(OBJS)
+	
+fclean:	clean
+		$(RM) $(NAME)
 
-fclean: clean
-				@$(RM) $(NAME)
-
-re: fclean all
-
-.PHONY: all clean re
+re:	fclean all

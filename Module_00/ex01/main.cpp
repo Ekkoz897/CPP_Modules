@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 07:34:03 by apereira          #+#    #+#             */
-/*   Updated: 2024/02/26 09:46:30 by apereira         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:29:30 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int main()
     std::cout << "--------------USAGE---------------" << std::endl;
     std::cout << "ADD\t: To add a contact." << std::endl;
     std::cout << "SEARCH\t: To search for a contact." << std::endl;
-    std::cout << "EXIT\t: to quite the PhoneBook." << std::endl;
+    std::cout << "EXIT\t: to quit the PhoneBook." << std::endl;
     std::cout << "----------------------------------" << std::endl;
     std::cout << std::endl;
+	std::cout << "> ";
 	getline(std::cin, input);
 	book.setCurrent(0);
 	input = trimSpaces(input);
