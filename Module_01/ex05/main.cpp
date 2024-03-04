@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 14:18:18 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/04 07:44:09 by apereira         ###   ########.fr       */
+/*   Created: 2024/03/04 07:49:59 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/04 13:40:21 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replace.hpp"
+#include "Harl.hpp"
 
-int main(int argc, char **argv)
+int main(void)
 {
-    if (argc != 4)
-	{
-		std::cerr << "Usage: " << argv[0] << " <filename> <string1> <string2>" << std::endl;
-		return (1);
-	}
-	ft_replace(argv);
-	return (0);
+    Harl	joe;
+
+    joe.complain("DEBUG");
+	joe.complain("INFO");
+	joe.complain("WARNING");
+	joe.complain("ERROR");
+	joe.complain("random garbage value");
 }
