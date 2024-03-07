@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 07:34:03 by apereira          #+#    #+#             */
-/*   Updated: 2024/02/26 17:29:30 by apereira         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:06:38 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 	getline(std::cin, input);
 	book.setCurrent(0);
 	input = trimSpaces(input);
-	while (input != "EXIT")
+	while (input != "EXIT" && !std::cin.eof())
 	{
 		if (input == "ADD")
 		{
