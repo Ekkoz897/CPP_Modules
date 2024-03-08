@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 09:04:40 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/08 14:31:42 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Point.hpp"
 
 Point::Point()
 {
-	(Fixed) x = 0;
-	(Fixed) y = 0;
+	Fixed x = 0;
+	Fixed y = 0;
 }
 
 Point::Point(const float a, const float b) : x(a), y(b)
@@ -30,11 +42,12 @@ Fixed	Point::getY(void) const
 	return (this->y);
 }
 
-Point&  Point::operator=( const Point &src ) {
+Point&  Point::operator=(const Point &src)
+{
     if (this != &src )
 	{
         (Fixed) this->x = src.getX();
         (Fixed) this->y = src.getY();
     }
-    return *this;
+    return (*this);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/07 11:01:04 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/08 11:01:46 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -15,7 +27,7 @@ Fixed::Fixed(const int nb)
 Fixed::Fixed(const float nb)
 {
 	//std::cout << "Float constructor called" << std::endl;
-	this->setRawBits(roundf(nb * ((double)(1 << this->Bits))));
+	this->setRawBits(roundf(nb * ((float)(1 << this->Bits))));
 }
 
 Fixed::Fixed(const Fixed& src)
@@ -32,9 +44,8 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(const Fixed& src)
 {
 	//std::cout << "Copy assignment operator called" << std::endl;
-	if (this == &src)
-		return *this;
-	this->setRawBits(src.getRawBits());
+	if (this != &src)
+		this->FixedPoint = src.FixedPoint;
 	return *this;
 }
 

@@ -1,6 +1,16 @@
-#include "Point.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 14:30:40 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/08 14:32:13 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// fix: return false if the point is a vertex or edge
+#include "Point.hpp"
 
 int	main(void)
 {
@@ -14,5 +24,5 @@ int	main(void)
 		std::cout << "Point is in the triangle" << std::endl;
 	else
 		std::cout << "Point isn't in the triangle" << std::endl;
-	return 0;
+	return (0);
 }

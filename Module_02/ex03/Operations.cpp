@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Operations.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 09:04:40 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/08 14:33:24 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
-// + - * /
+// + - *
 Fixed Fixed::operator+(Fixed const &a)
 {
     return (this->toFloat() + a.toFloat());
@@ -28,6 +40,7 @@ Fixed Fixed::operator++(void)
     return (*this);
 }
 
+// Creates a copy of the object, increments the actuall object but returns the copy (value before increment)
 Fixed Fixed::operator++(int nb)
 {
     Fixed tmp(*this);
@@ -42,6 +55,7 @@ Fixed Fixed::operator--(void)
     return (*this);
 }
 
+// Creates a copy of the object, decrement the actuall object but returns the copy (value before decrement)
 Fixed Fixed::operator--(int nb)
 {
     Fixed tmp(*this);
@@ -51,27 +65,33 @@ Fixed Fixed::operator--(int nb)
 }
 
 // > < >= <= == !=
-bool    Fixed::operator>(const Fixed &rhs) const {
+bool    Fixed::operator>(const Fixed &rhs) const
+{
     return (this->getRawBits() > rhs.getRawBits());
 }
 
-bool    Fixed::operator<(const Fixed &rhs) const {
+bool    Fixed::operator<(const Fixed &rhs) const
+{
     return (this->getRawBits() < rhs.getRawBits());
 }
 
-bool    Fixed::operator>=(const Fixed &rhs) const {
+bool    Fixed::operator>=(const Fixed &rhs) const
+{
     return (this->getRawBits() >= rhs.getRawBits());
 }
 
-bool    Fixed::operator<=(const Fixed &rhs) const {
+bool    Fixed::operator<=(const Fixed &rhs) const
+{
     return (this->getRawBits() <= rhs.getRawBits());
 }
 
-bool    Fixed::operator==(const Fixed &rhs) const {
+bool    Fixed::operator==(const Fixed &rhs) const
+{
     return (this->getRawBits() == rhs.getRawBits());
 }
 
-bool    Fixed::operator!=(const Fixed &rhs) const {
+bool    Fixed::operator!=(const Fixed &rhs) const
+{
     return (this->getRawBits() != rhs.getRawBits());
 }
 
@@ -79,27 +99,27 @@ bool    Fixed::operator!=(const Fixed &rhs) const {
 Fixed&	Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a.getRawBits() < b.getRawBits())
-		return a;
-	return b;
+		return (a);
+	return (b);
 }
 
 const Fixed&	Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if (a.getRawBits() < b.getRawBits())
-		return a;
-	return b;
+		return (a);
+	return (b);
 }
 
 Fixed&	Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a.getRawBits() > b.getRawBits())
-		return a;
-	return b;
+		return (a);
+	return (b);
 }
 
 const Fixed&	Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a.getRawBits() > b.getRawBits())
-		return a;
-	return b;
+		return (a);
+	return (b);
 }
