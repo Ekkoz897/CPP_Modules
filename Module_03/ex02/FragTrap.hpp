@@ -1,5 +1,17 @@
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/11 14:49:45 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/18 14:20:18 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include <iostream>
 #include <string>
@@ -9,7 +21,8 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : public ClapTrap
+{
 	public:
 		FragTrap();
 		FragTrap(std::string str);
@@ -17,7 +30,7 @@ class FragTrap : public ClapTrap {
     	~FragTrap();
 		FragTrap&	operator=(const FragTrap& src);
 
-		void	highFivesGuys();
+		void highFivesGuys(void);
 };
 
 #endif

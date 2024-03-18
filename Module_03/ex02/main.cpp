@@ -1,40 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/11 15:05:11 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/18 14:20:20 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 int main()
 {
-	// std::cout << "-----Clap-----" << std::endl;
-	// ClapTrap c;
-	// ClapTrap a("a");
-	// ClapTrap b("b");
-	// std::cout << "\n";
-	// a.attack("b");
-	// b.takeDamage(a.getAttackDamage());
-	// a.attack("b");
-	// b.takeDamage(a.getAttackDamage());
-	// a.attack("b");
-	// b.takeDamage(a.getAttackDamage());
-	// b.beRepaired(2);
-
-	// std::cout << "\n-----Scav-----" << std::endl;
-	// ScavTrap d;
-	// ScavTrap e("e");
-	// ScavTrap f("f");
-	// std::cout << "\n";
-
-	// for (int i = 0; i <= 50; i++)
-	// {
-	// 	std::cout << i << std::endl;
-	// 	e.attack("f");
-	// 	f.takeDamage(e.getAttackDamage());
-	// }
-	// std::cout << "\n";
-	// f.attack("e");
-	// f.beRepaired(10);
-	// f.attack("e");
-	// std::cout << "\n\n-----Dest-----" << std::endl;
-
-	std::cout << "\n-----Frag-----" << std::endl;
     FragTrap g("g");
 	FragTrap h("h");
 
@@ -50,5 +30,5 @@ int main()
 	h.attack("g");
     g.highFivesGuys();
 
-	std::cout << "\n\n-----Dest-----" << std::endl;
+	std::cout << "\n" << std::endl;
 }

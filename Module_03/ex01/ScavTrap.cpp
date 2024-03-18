@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/11 13:14:48 by apereira          #+#    #+#             */
+/*   Updated: 2024/03/18 14:20:01 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	std::cout << "ScavTrap default created." << std::endl;
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	std::cout << "ScavTrap default created" << std::endl;
+	this->hit_pts = 100;
+	this->nrg_pts = 50;
+	this->atk_dmg = 20;
 }
 
 ScavTrap::ScavTrap(std::string str) : ClapTrap(str)
 {
 	std::cout << "ScavTrap " << str << " created." << std::endl;
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	this->hit_pts = 100;
+	this->nrg_pts = 50;
+	this->atk_dmg = 20;
 }
 
 ScavTrap::~ScavTrap()
@@ -33,11 +45,11 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 	if (this != &src)
 	{
 		this->name = src.name;
-		this->hitPoints = src.hitPoints;
-		this->energyPoints = src.energyPoints;
-		this->attackDamage = src.attackDamage;
+		this->hit_pts = src.hit_pts;
+		this->nrg_pts = src.nrg_pts;
+		this->atk_dmg = src.atk_dmg;
 	}
-	return *this;
+	return (*this);
 }
 
 void	ScavTrap::guardGate()
@@ -47,16 +59,16 @@ void	ScavTrap::guardGate()
 
 void	ScavTrap::attack(const std::string &target)
 {
-	if (this->energyPoints <= 0)
+	if (this->nrg_pts <= 0)
 	{
 		std::cout << "ScavTrap " << this->name << " has no energy points left." <<std::endl;
 		return;
 	}
-	if (this->hitPoints <= 0)
+	if (this->hit_pts <= 0)
 	{
 		std::cout << "ScavTrap " << this->name << " has no hit points left." << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage! " << std::endl;
-	this->energyPoints -= 1;
+	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->atk_dmg << " points of damage! " << std::endl;
+	this->nrg_pts -= 1;
 }
