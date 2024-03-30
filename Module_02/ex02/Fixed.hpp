@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:01:01 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:18:19 by apereira         ###   ########.fr       */
+/*   Updated: 2024/03/30 12:46:32 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ class Fixed {
 			bool    operator==(const Fixed &rhs) const;
 			bool	operator!=(const Fixed &rhs) const;
 
-		// A static member function can be called even if no objects of the class exist
-		// Common to all instances of the class
+		// A static member function can be called even if no objects of the class exist.
+		// A statis var's value is common to all instances of the class
 			static Fixed&		min(Fixed &a, Fixed &b);
 			static const Fixed&	min(const Fixed &a, const Fixed &b);
 			static Fixed&		max(Fixed &a, Fixed &b);

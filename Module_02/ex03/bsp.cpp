@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 09:04:40 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:18:27 by apereira         ###   ########.fr       */
+/*   Updated: 2024/03/30 12:47:03 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Fixed	cross_product(Point const a, Point const b, Point const c)
 }
 
 // If the area of the 3 smaller triangles is equal to the area of the main triangle, then 
-// the point is inside the triangle
+// the point is inside the triangle. If it's on the vertex one of the triangles will have
+// 0 area (also checking it)
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
