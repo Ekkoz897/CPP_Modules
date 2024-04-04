@@ -25,9 +25,9 @@
 class ClapTrap {
 	protected:
 			std::string name;
-			unsigned int hit_pts;
-			unsigned int nrg_pts;
-			unsigned int atk_dmg;
+			int hit_pts;
+			int nrg_pts;
+			int atk_dmg;
 
 	public:
 			ClapTrap();
