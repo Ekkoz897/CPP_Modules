@@ -6,12 +6,12 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:47:27 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:20:19 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/04 08:00:33 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
 
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap() : ClapTrap()
 {

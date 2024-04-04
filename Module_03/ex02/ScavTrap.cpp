@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:48:42 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:20:23 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/04 08:04:24 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	ScavTrap::attack(const std::string &target)
 	if (this->nrg_pts <= 0)
 	{
 		std::cout << "ScavTrap " << this->name << " has no energy points left." <<std::endl;
-		return;
+		return ;
 	}
 	if (this->hit_pts <= 0)
 	{
 		std::cout << "ScavTrap " << this->name << " has no hit points left." << std::endl;
-		return;
+		return ;
 	}
 	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->atk_dmg << " points of damage! " << std::endl;
 	this->nrg_pts -= 1;

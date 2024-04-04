@@ -6,9 +6,10 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:49:42 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:20:24 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/04 08:04:41 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP

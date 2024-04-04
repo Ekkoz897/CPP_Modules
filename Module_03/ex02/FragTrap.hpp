@@ -6,9 +6,10 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:49:45 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:20:18 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/04 08:05:23 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
