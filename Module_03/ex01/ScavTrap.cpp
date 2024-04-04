@@ -6,9 +6,10 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:14:48 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/18 14:20:01 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/04 07:57:37 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "ScavTrap.hpp"
 
@@ -30,7 +31,7 @@ ScavTrap::ScavTrap(std::string str) : ClapTrap(str)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap " << this->name << " destroyed." << std::endl;
+    std::cout << "ScavTrap " << this->name << " destroyed.." << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap()
@@ -61,14 +62,14 @@ void	ScavTrap::attack(const std::string &target)
 {
 	if (this->nrg_pts <= 0)
 	{
-		std::cout << "ScavTrap " << this->name << " has no energy points left." <<std::endl;
-		return;
+		std::cout << "ScavTrap " << this->name << " has no energy points left.." <<std::endl;
+		return ;
 	}
 	if (this->hit_pts <= 0)
 	{
-		std::cout << "ScavTrap " << this->name << " has no hit points left." << std::endl;
-		return;
+		std::cout << "ScavTrap " << this->name << " has no hit points left.." << std::endl;
+		return ;
 	}
-	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->atk_dmg << " points of damage! " << std::endl;
+	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->atk_dmg << " points of damage!! " << std::endl;
 	this->nrg_pts -= 1;
 }
