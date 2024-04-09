@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:12:45 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/12 13:07:17 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:33:13 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongCat::WrongCat(void)
 WrongCat::WrongCat(const WrongCat &other) : WrongAnimal()
 {
     std::cout << "Wrongcat copy constructor called" << std::endl;
-    *this = other;
+    this->type = other.type;
     return ;
 }
 

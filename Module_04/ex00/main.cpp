@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:30:43 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/12 13:16:31 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:11:20 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main()
 {
     // Animal x;
-
+	
     const Animal* meta = new Animal();
     std::cout << "type: " << meta->getType() << std::endl;
     meta->makeSound();

@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:30:43 by apereira          #+#    #+#             */
-/*   Updated: 2024/03/12 13:22:01 by apereira         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:30:33 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int main()
     for (int f = 0; f < n; f++)
         delete list[f];
 
-    // std::cout << std::endl;
-    // Cat c;
-    // Cat d = c;
+    std::cout << std::endl;
+    Cat c;
+    std::cout << std::endl;
+    Cat d = c;
 }
