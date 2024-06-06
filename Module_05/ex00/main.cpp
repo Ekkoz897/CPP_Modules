@@ -1,7 +1,8 @@
 
 #include "Bureaucrat.hpp"
 
-int main() {
+int main()
+{
     try
 	{
         Bureaucrat bob("Bob", 2);
