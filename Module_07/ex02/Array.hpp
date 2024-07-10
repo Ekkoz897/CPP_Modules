@@ -7,7 +7,6 @@
 #include <cstring>
 #include <iomanip>
 #include <cstdlib>
-	
 
 template <typename T>
 class Array
@@ -19,19 +18,20 @@ class Array
         Array();
         ~Array();
         Array(unsigned int n);
-        Array(const Array& src);
-        Array&  operator=(const Array& src);
+        Array(const Array& other);
+        Array &operator=(const Array& other);
 
-        T &operator [](unsigned int n) const;
+        T &operator [](unsigned int index) const;
 
-        int size();
+        unsigned int size();
 
         class NotValid : public std::exception
         {
 			public:
-				virtual const char* what() const throw() {return "Not valid.";}
+				virtual const char* what() const throw() {return "Invalid array size.";}
         };
 };
+// virtual exception in case we want to derive classes and overload it
 
 #include "Array.tpp"
 
