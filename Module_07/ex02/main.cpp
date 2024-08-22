@@ -129,5 +129,5 @@ int main(int, char**)
         }
         delete [] mirror;
     }
-    return 0;
+    return (0);
 }
