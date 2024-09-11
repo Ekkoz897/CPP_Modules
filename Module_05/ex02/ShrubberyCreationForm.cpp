@@ -23,12 +23,13 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-// .c_str para convertir de std::str para char * pq ofs n~ao aceita std::str
+// .c_str para convertir de std::str para char *, pq ofs n~ao aceita std::str
 void ShrubberyCreationForm::action(const Bureaucrat &executor) const
 {
 	(void)executor;
     std::ofstream ofs((target + "_shrubbery").c_str());
-    if (ofs.fail()) {
+    if (ofs.fail())
+	{
         throw std::ios_base::failure("Failed to open file");
     }
     ofs << "       _-_\n"

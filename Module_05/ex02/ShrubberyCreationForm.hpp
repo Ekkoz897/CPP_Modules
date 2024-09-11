@@ -3,7 +3,8 @@
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public AForm
+{
 private:
     const std::string target;
 

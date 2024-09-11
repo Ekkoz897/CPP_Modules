@@ -2,7 +2,8 @@
 #include "Bureaucrat.hpp"
 
 AForm::AForm(const std::string& name, int grade_to_sign, int grade_to_execute) \
-    : name(name), is_signed(false), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute) {
+    : name(name), is_signed(false), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
+{
     if (grade_to_sign < 1 || grade_to_execute < 1)
         throw GradeTooHighException();
     if (grade_to_sign > 150 || grade_to_execute > 150)

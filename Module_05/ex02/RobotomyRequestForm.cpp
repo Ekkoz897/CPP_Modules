@@ -2,19 +2,18 @@
 #include <iostream>
 #include <cstdlib>
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) \
     : AForm("Robotomy Request", 72, 45), target(target)
-	{
+{
 
-	}
+}
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
-    : AForm(other), target(other.target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other), target(other.target)
 {
 
 }

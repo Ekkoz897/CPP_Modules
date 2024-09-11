@@ -35,5 +35,5 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
         throw UnknownFormException();
 
     std::cout << "Intern creates " << form->getName() << std::endl;
-    return form;
+    return (form);
 }

@@ -18,14 +18,15 @@ public:
     AForm(const std::string& name, int grade_to_sign, int grade_to_execute);
     virtual ~AForm();
     AForm(const AForm& src);
-    AForm& operator=(const AForm& src);
+    AForm &operator=(const AForm& src);
 
     const std::string& getName() const;
-    bool isSigned() const;
-    int getGradeToSign() const;
-    int getGradeToExecute() const;
+    int 			   getGradeToSign() const;
+    int 			   getGradeToExecute() const;
 
     void beSigned(const Bureaucrat& bureaucrat);
+    bool isSigned() const;
+
 	void execute(const Bureaucrat &executor) const;
 
 	// pure virtual, classe abstrata
@@ -50,6 +51,6 @@ public:
     };
 };
 
-std::ostream& operator<<(std::ostream& out, const AForm& AForm);
+std::ostream &operator<<(std::ostream& out, const AForm& AForm);
 
 #endif
