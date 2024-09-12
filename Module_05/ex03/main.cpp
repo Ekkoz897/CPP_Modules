@@ -16,11 +16,17 @@ int main()
         AForm* pardon = intern.makeForm("presidential pardon", "Alice");
         AForm* robotomy = intern.makeForm("robotomy request", "Eve");
 
+		std::cout << "---------------\n";
+
         bob.signForm(*shrubbery);
         bob.executeForm(*shrubbery);
 
+		std::cout << "---------------\n";
+
         bob.signForm(*pardon);
         bob.executeForm(*pardon);
+
+		std::cout << "---------------\n";
 
         bob.signForm(*robotomy);
         bob.executeForm(*robotomy);

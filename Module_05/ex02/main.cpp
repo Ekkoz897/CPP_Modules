@@ -16,14 +16,19 @@ int main()
         bob.signForm(shrubbery);
         bob.executeForm(shrubbery);
 
+		std::cout << "---------------\n";
+
         // Sign and execute Presidential Pardon Form
         bob.signForm(pardon);
         bob.executeForm(pardon);
 
+		std::cout << "---------------\n";
+
         // Sign and execute Robotomy Request Form
         bob.signForm(robotomy);
         bob.executeForm(robotomy);
-        bob.executeForm(robotomy); // Try executing again to see alternation in success/failure
+		std::cout << "---------------\n";
+        bob.executeForm(robotomy); // Try again to see 50% success
 
     }
 	catch (const std::exception& e)

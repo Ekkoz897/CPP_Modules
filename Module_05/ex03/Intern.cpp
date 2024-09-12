@@ -23,17 +23,32 @@ Intern& Intern::operator=(const Intern& other)
 
 AForm* Intern::makeForm(const std::string& formName, const std::string& target) const
 {
-    AForm* form = NULL;
+	std::string formNames[] =
+	{
+        "shrubbery creation",
+        "robotomy request",
+        "presidential pardon"
+    };
 
-    if (formName == "shrubbery creation")
-        form = new ShrubberyCreationForm(target);
-    else if (formName == "robotomy request")
-        form = new RobotomyRequestForm(target);
-    else if (formName == "presidential pardon")
-        form = new PresidentialPardonForm(target);
-    else
-        throw UnknownFormException();
+	AForm* forms[] =
+	{
+        new ShrubberyCreationForm(target),
+        new RobotomyRequestForm(target),
+        new PresidentialPardonForm(target)
+    };
 
-    std::cout << "Intern creates " << form->getName() << std::endl;
-    return (form);
+ 	AForm* matchingForm = NULL;
+
+	for (size_t i = 0; i < 3; ++i)
+	{
+        if (formName == formNames[i])
+			matchingForm = forms[i];\
+		else
+        	delete forms[i];
+    }
+	if (!matchingForm)
+   		throw UnknownFormException();
+	
+	std::cout << "Intern creates " << matchingForm->getName() << std::endl;
+    return (matchingForm);
 }
