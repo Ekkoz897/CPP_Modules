@@ -3,7 +3,8 @@
 #include "Serializer.hpp"
 #include <iostream>
 
-int main() {
+int main()
+{
     Data data = {42, 3.14f, "Hello, world!"};
 
     std::cout << "Original Data:" << std::endl;
@@ -23,5 +24,5 @@ int main() {
     std::cout << "floatValue: " << deserializedData->floatValue << std::endl;
     std::cout << "stringValue: " << deserializedData->stringValue << std::endl;
 
-    return 0;
+    return (0);
 }

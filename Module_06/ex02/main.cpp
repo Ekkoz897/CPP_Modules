@@ -7,6 +7,7 @@ class C  : public Base {};
 Base* generate(void)
 {
     int n = std::rand() % 10;
+
     if (n >= 0 && n <= 3)
     {
         std::cout << "Type A object created." << std::endl;
@@ -24,6 +25,7 @@ Base* generate(void)
     }
 }
 
+// dynamic_cast returns nullptr when the cast fails with pointers
 void    identify(Base* p)
 {
     std::cout << "Identify 1: ";
@@ -89,5 +91,5 @@ int main(void)
     identify(obj3);
     identify(*obj3);
 
-    return 0;
+    return (0);
 }

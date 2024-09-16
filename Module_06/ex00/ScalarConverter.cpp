@@ -22,13 +22,13 @@ ScalarConverter::~ScalarConverter()
 
 bool isInt(const std::string& str)
 {
-    int i = 0;
-    if ((str[i] == '-' || str[i] == '+') && str[i + 1])
-		i++;
-    while (str[i])
-	{
-        if (std::isdigit(str[i]) == 0)
-			return (false);
+    size_t i = 0;
+    if ((str[i] == '-' || str[i] == '+') && str.length() > 1)
+        i++;
+    while (i < str.length())
+    {
+        if (!std::isdigit(str[i]))
+            return (false);
 		i++;
     }
     return (true);
@@ -36,55 +36,73 @@ bool isInt(const std::string& str)
 
 bool isChar(const std::string& str)
 {
-    if (str.length() != 1)
-        return (false);
-    return (true);
+    if (str.length() == 1 && !std::isdigit(str[0]))
+        return (true);
+    return (false);
 }
 
 bool isFloat(const std::string& str)
 {
-    size_t i = 0, p = 0;
+	size_t i = 0;
+	size_t decimalCount = 0;
 
-    if (str[i] == '-' || str[i] == '+')
+	if (str.empty())
+		return (false);
+	if ((str[i] == '-' || str[i] == '+') && str.length() > 1)
 		i++;
-    while (str[i] && i < str.length() - 1)
+	if (i >= str.length())
+		return (false);
+
+	while (i < str.length() - 1)
 	{
-        if (p == 0 && str[i] == '.')
+		if (str[i] == '.')
 		{
-            if (!str[i + 1] || str[i + 1] == 'f')
+			if (decimalCount > 0)
 				return (false);
-            p = 1;
-        }
+			decimalCount++;
+			if (i + 1 >= str.length() - 1)
+				return (false);
+		}
 		else if (!std::isdigit(str[i]))
 			return (false);
-        i++;
-    }
-	 if (p == 0 || str[str.length() - 1] != 'f')
-    	return (false);
+		i++;
+	}
+	if (str[str.length() - 1] != 'f')
+		return (false);
+	if (decimalCount != 1)
+		return (false);
 	return (true);
 }
 
 bool isDouble(const std::string& str)
 {
-    size_t i = 0, p = 0;
+	size_t i = 0;
+	size_t decimalCount = 0;
 
-    if (str[i] == '-' || str[i] == '+')
+	if (str.empty())
+		return (false);
+	if ((str[i] == '-' || str[i] == '+') && str.length() > 1)
 		i++;
-    while (str[i])
+	if (i >= str.length())
+		return (false);
+	
+	while (i < str.length())
 	{
-        if (p == 0 && str[i] == '.')
+		if (str[i] == '.')
 		{
-            if (!str[i + 1])
+			if (decimalCount > 0)
 				return (false);
-            p = 1;
-        }
+			decimalCount++;
+			if (i + 1 >= str.length())
+				return (false);
+		}
 		else if (!std::isdigit(str[i]))
 			return (false);
-        i++;
-    }
-	if (p == 0)
+		i++;
+	}
+	if (decimalCount != 1)
 		return (false);
-    return (true);
+	return (true);
 }
 
 bool    isSpecial(std::string str)
@@ -147,6 +165,7 @@ void    printSpecial(std::string str)
 {
     std::cout << "Char: impossible" << std::endl;
     std::cout << "Int: impossible" << std::endl;
+	
     if (str == "nanf" || str == "nan")
         std::cout << "Float: nanf" << std::endl;
     else if (str == "-inf" || str == "-inff")

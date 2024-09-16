@@ -7,7 +7,7 @@
 #include <limits>
 #include <cmath>
 
-// tipo de var
+// tipo de input
 bool isInt(const std::string& str);
 bool isChar(const std::string& str);
 bool isFloat(const std::string& str);
@@ -34,8 +34,8 @@ class ScalarConverter
 {
 	private:
 			ScalarConverter();  // estando privado, impede de instanciar a classe
-			ScalarConverter(const ScalarConverter&);  // ... copiar ...
-			ScalarConverter& operator=(const ScalarConverter&); // ... igualar ...
+			ScalarConverter(const ScalarConverter&);
+			ScalarConverter& operator=(const ScalarConverter&);
 			
 	public:
 			~ScalarConverter();
