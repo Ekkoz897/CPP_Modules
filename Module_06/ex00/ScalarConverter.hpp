@@ -6,6 +6,7 @@
 #include <sstream>
 #include <limits>
 #include <cmath>
+#include <iomanip>
 
 // tipo de input
 bool isInt(const std::string& str);

@@ -135,20 +135,26 @@ void printInt(std::string str, int i, float f, double d)
         std::cout << "Int: " << i << std::endl;
 }
 
-void    printFloat(std::string str, float f, double d)
+void printFloat(std::string str, float f, double d)
 {
-    if (isDouble(str) && (d < -std::numeric_limits<float>::max() || d > std::numeric_limits<float>::max()))
+    if (std::isinf(d))
         std::cout << "Float: inf" << std::endl;
-    else if (f - static_cast< int > (f) == 0)
-        std::cout << "Float: " << f << ".0f" << std::endl;
+    else if (std::isnan(d))
+        std::cout << "Float: nan" << std::endl;
+    else if (f - static_cast<int>(f) == 0)
+        std::cout << "Float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
     else
         std::cout << "Float: " << f << "f" << std::endl;
 }
 
-void    printDouble(double d)
+void printDouble(double d)
 {
-    if (d - static_cast< int > (d) == 0)
-        std::cout << "Double: " << d << ".0" << std::endl;
+    if (std::isinf(d))
+        std::cout << "Double: inf" << std::endl;
+    else if (std::isnan(d))
+        std::cout << "Double: nan" << std::endl;
+    else if (d - static_cast<int>(d) == 0)
+        std::cout << "Double: " << std::fixed << std::setprecision(1) << d << std::endl;
     else
         std::cout << "Double: " << d << std::endl;
 }
@@ -181,27 +187,47 @@ void    printSpecial(std::string str)
 }
 
 // cases for each type of var
-void    caseInt(std::string str)
+void caseInt(std::string str)
 {
     int i;
     float f;
     double d;
     char c;
-	
+    
     try
     {
         i = std::stoi(str);
     }
-    catch (std::exception &error)
+    catch (const std::out_of_range &error)
+    {
+        try
+        {
+            // Attempt to handle as a double instead
+            d = std::stod(str);
+            f = static_cast<float>(d);
+            c = static_cast<char>(-1);
+            printChar(c, i);
+			std::cout << "int: impossible" << std::endl;
+			printFloat(str, f, d);
+			printDouble(d);
+        }
+        catch (const std::exception &e)
+        {
+            std::cout << "Conversion makes no sense." << std::endl;
+        }
+        return ;
+    }
+    catch (const std::exception &error)
     {
         std::cout << "Conversion makes no sense." << std::endl;
         return ;
     }
-    f = static_cast <float> (i);
-    d = static_cast <double> (i);
-    c = static_cast <char> (i);
+    f = static_cast<float>(i);
+    d = static_cast<double>(i);
+    c = static_cast<char>(i);
     printAllTypes(str, i, f, d, c);
 }
+
 
 void    caseChar(std::string str)
 {

@@ -6,6 +6,7 @@
 #include <cstring>
 #include <iomanip>
 #include <stdlib.h>
+#include <ctime>
 
 class Base {
     public:

@@ -6,7 +6,7 @@ class C  : public Base {};
 
 Base* generate(void)
 {
-    int n = std::rand() % 10;
+    int n = (std::rand() % 10);
 
     if (n >= 0 && n <= 3)
     {
@@ -69,6 +69,8 @@ void    identify(Base& p)
 
 int main(void)
 {
+	std::srand(std::time(0));
+	
     Base* obj = generate();
     identify(obj);
     identify(*obj);
