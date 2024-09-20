@@ -5,21 +5,15 @@
 #include <iostream>
 
 template <typename T>
-void	iter(T *arg1, size_t arg2, void (*func)(const T&))
+void	iter(T *array, size_t size, void (*func)(const T&))
 {
 	size_t i = 0;
 
-	while (i < arg2)
+	while (i < size)
 	{
-		func(arg1[i]);
+		func(array[i]);
 		i++;
 	}
-}
-
-template <typename T>
-void    print(T value)
-{
-    std::cout << value << std::endl;
 }
 
 template <typename T>
@@ -28,7 +22,7 @@ void print(const  T &value)
   std::cout << value << std::endl;
 }
 
-// // CODE PROVIDED IN EX01.CPP CORRECTION SHEET
+// // EX01.CPP from subject
 // class Awesome
 // {
 //   public:

@@ -10,23 +10,25 @@ Array<T>::Array() : len(0), arr(0)
 	
 }
 
-// construction with int n as parameter
+// construction with int n as parameter, if value is neg, converted to pos and throws bad_alloc
 template <typename T>
 Array<T>::Array(unsigned int n) : len(n)
 {
-    if (static_cast<int>(n) < 0)
-        throw(NotValid());
-    else if (static_cast<int>(n) == 0)
-    {
-        this->len = 0;
-        this->arr = 0;
-    }
-    else
-    {
-        this->arr = new T[n];
-        for (unsigned int i = 0; i < n; ++i)
-            this->arr[i] = T(); // Default initialization for type T
-    }
+	try
+	{
+		if (n == 0)
+			this->arr = 0;
+		else
+		{
+			this->arr = new T[n];
+			for (unsigned int i = 0; i < n; ++i)
+				this->arr[i] = T();
+		}
+	}
+	catch(std::bad_alloc &e)
+	{
+		std::cerr << "Invalid array size !" << e.what() << std::endl;
+	}
 }
 
 // copy constructor
@@ -62,7 +64,7 @@ Array<T>::~Array()
 }
 
 template <typename T>
-unsigned int Array<T>::size()
+unsigned int Array<T>::size() const
 {
     return (this->len);
 }

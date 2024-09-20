@@ -13,10 +13,12 @@ int main(void)
 
 	const int d[3] = {};
 	iter(d, 3, print);
+
     return (0);
 }
 
-// int main() {
+// int main()
+// {
 //   int tab[] = { 0, 1, 2, 3, 4 };
 //   Awesome tab2[5];
 

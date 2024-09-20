@@ -23,12 +23,12 @@ class Array
 
         T &operator [](unsigned int index) const;
 
-        unsigned int size();
+        unsigned int size() const;
 
         class NotValid : public std::exception
         {
 			public:
-				virtual const char* what() const throw() {return "Invalid array size.";}
+				virtual const char* what() const throw() {return "Invalid index number.";}
         };
 };
 // virtual exception in case we want to derive classes and overload it

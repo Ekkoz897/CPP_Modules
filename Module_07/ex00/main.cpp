@@ -26,7 +26,7 @@ int main(void)
     return (0);
 }
 
-// THIS IS THE EX00.CPP PROVIDED IN CORRECTION SHEET
+// EX00.CPP from subject
 // class Awesome
 // {
 //   public:

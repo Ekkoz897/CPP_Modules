@@ -228,7 +228,6 @@ void caseInt(std::string str)
     printAllTypes(str, i, f, d, c);
 }
 
-
 void    caseChar(std::string str)
 {
     int i;

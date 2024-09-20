@@ -43,5 +43,4 @@ class ScalarConverter
 			static void	converter(std::string str);
 };
 
-
 #endif
