@@ -17,5 +17,4 @@ int	easyfind(T t, int b)
     return (*it);
 }
 
-
 #endif

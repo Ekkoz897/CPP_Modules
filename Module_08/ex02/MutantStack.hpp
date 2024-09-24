@@ -18,7 +18,7 @@ class MutantStack : public std::stack<T>
 			// defines an iterator type for MutantStack based on the underlying container's iterator type.
 			typedef typename std::stack<T>::container_type::iterator iterator;
 
-			// underlying container "c" refers to the actual data struct
+			// container "c" refers to the actual data struct
 			// that holds the elements of the stack
 			iterator begin()
 			{

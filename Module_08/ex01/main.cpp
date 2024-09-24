@@ -16,6 +16,7 @@
 
 int main(void)
 {
+	srand(time(0));
     Span a(4);
     try
     {
