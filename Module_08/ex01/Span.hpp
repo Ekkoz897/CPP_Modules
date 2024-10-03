@@ -24,12 +24,6 @@ class Span
 
 			long shortestSpan();
 			long longestSpan();
-
-			class tooMany : public std::exception
-        	{
-				public:
-					virtual const char* what() const throw() {return "The array is already full";}
-        	};
 };
 
 #endif

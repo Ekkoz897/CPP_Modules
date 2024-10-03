@@ -4,8 +4,9 @@ int main(void)
 {
     std::vector<int> numbers;
 
-    for (int i = 1; i <= 50; i++)
+    for (int i = 1; i <= 50; i++) {
         numbers.push_back(i);
+    }
 
     try
 	{
@@ -27,5 +28,5 @@ int main(void)
         std::cout << "Value not found: " << 51 << std::endl;
     }
 
-    return (0);
+    return 0;
 }

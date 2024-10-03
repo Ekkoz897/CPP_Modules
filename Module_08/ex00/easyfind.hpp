@@ -13,7 +13,7 @@ int	easyfind(T t, int b)
 {
 	typename T::iterator it = std::find(t.begin(), t.end(), b);
     if (it == t.end())
-        throw(std::exception());
+        throw std::runtime_error("NOT FOUND");
     return (*it);
 }
 

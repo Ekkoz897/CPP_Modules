@@ -39,9 +39,9 @@ Span &Span::operator=(const Span &other)
 void	Span::addNumber(int nbr)
 {
 	if (vec.size() < N)
-		this->vec.push_back(nbr);
+		vec.push_back(nbr);
 	else
-		throw (tooMany());
+		throw std::runtime_error("Can't add any more numbers");
 }
 
 void	Span::addNumbers(unsigned int count)
@@ -52,7 +52,7 @@ void	Span::addNumbers(unsigned int count)
 			this->vec.push_back(std::rand() % 1000);
 	}
 	else
-		throw (tooMany());
+		throw std::runtime_error("Container is already full");
 }
 
 long Span::shortestSpan()
@@ -75,14 +75,11 @@ long Span::shortestSpan()
     return (diff);
 }
 
-// abs in case max and min are negative, we want the distance not the math
 long Span::longestSpan()
 {
 	if (this->vec.size() <= 1)
 		throw(std::logic_error("Not enough numbers to find a span"));
 
 	std::sort(this->vec.begin(), this->vec.end());
-	long min = this->vec[0];
-	long max = this->vec[vec.size() - 1];
-	return (max - min);
+	return (vec.back() - vec.front());
 }
