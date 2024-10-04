@@ -46,7 +46,7 @@ void    PmergeMe::sortPair()
 	}
 }
 
-// recursive function to sort pairs
+// recursive function to sort pairs, based on highest value of each pair
 void	PmergeMe::sortPairs_recursive(size_t size)
 {
 	if (size >= vec.size())
@@ -65,7 +65,7 @@ void	PmergeMe::sortPairs_recursive(size_t size)
 
 void    PmergeMe::FordJohnson_vec()
 {
-	// sorts each pair
+	// sorts each pair (insertion sort)
    this->sortPair();
 
 	int odd = 0;
@@ -76,7 +76,7 @@ void    PmergeMe::FordJohnson_vec()
 		vec.erase(vec.end() - 1);
 	}
 
-	// sorts pairs recursively based on highest value
+	// sorts pairs recursively based on highest value (merge sort)
 	sortPairs_recursive(1);
 
 	if (odd == 1)
@@ -131,6 +131,10 @@ PmergeMe::PmergeMe(char **argv, std::string type)
         if (isSorted(vec))
             throw(std::invalid_argument("Set of numbers is sorted"));
     }
+    else if (type == "deque")
+        this->N = dq.size();
+}
+
     else if (type == "deque")
         this->N = dq.size();
 }
