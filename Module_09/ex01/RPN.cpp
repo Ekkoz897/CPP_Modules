@@ -113,8 +113,10 @@ void    RPN::run(std::string str)
 			this->st.push(nb);
 		}
 		else if ((aux[0] == '+' || aux[0] == '-' || aux[0] == '*' || aux[0] == '/') && !aux[1])
+		{
 			if ( !this->calculate(aux))
 				throw(std::invalid_argument("Error: bad input"));
+		}
 		else
 			throw(std::invalid_argument("Error: bad input"));
 	}
@@ -122,3 +124,4 @@ void    RPN::run(std::string str)
 		throw(std::invalid_argument("Error: bad input"));
 	std::cout << this->st.top() << std::endl;
 }
+
