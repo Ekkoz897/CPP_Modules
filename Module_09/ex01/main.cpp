@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout << "Error: bad input" << std::endl;
+        std::cerr << "Error: bad input" << std::endl;
         return (0);
     }
     RPN rpn;
