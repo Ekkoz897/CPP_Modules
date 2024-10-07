@@ -39,7 +39,7 @@ class PmergeMe
         size_t              getN();
 
 		//aux's
-		static size_t       get_jacobsthal(size_t i, size_t *jacob_order, size_t *smaller_index);
+		static size_t       get_jacobsthal(size_t i, size_t *jacob_order);
         std::string         ft_trim(std::string str);
 
 		// TEMPLATE FUNCTIONS
@@ -69,7 +69,6 @@ class PmergeMe
 		{
 			size_t aux = 1;
             size_t f = 0;
-            size_t smaller_index = 1;
             size_t jacob_order = 1;
 
 			int index_b;
@@ -77,9 +76,11 @@ class PmergeMe
             {
                 // uses the jacobshtal number to get the index of the
                 // next element of b to insert in a
-                aux = get_jacobsthal(aux, &jacob_order, &smaller_index);
+                aux = get_jacobsthal(aux, &jacob_order);
                 while (aux > b.size())
                     aux--;
+				
+				// -1 because arrays start from [0] but JC starts from [1]
                 index_b = aux - 1;
 
                 // binary search and insertion of b in a

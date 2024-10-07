@@ -135,6 +135,3 @@ PmergeMe::PmergeMe(char **argv, std::string type)
         this->N = dq.size();
 }
 
-    else if (type == "deque")
-        this->N = dq.size();
-}
